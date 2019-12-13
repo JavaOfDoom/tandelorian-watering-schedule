@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+const startDate = moment().year(2019).month(11).date(16);
+const endDate = moment(startDate).add(12, "weeks");
 
 class Calendar extends Component {
   state = {
     dateObject: moment(),
     allMonths: moment.months(),
-    startDate: moment().year(2019).month(11).date(16)
+    dayWatering: this.wateringDay
   };
 
   daysInMonth = () => {
@@ -28,15 +30,36 @@ class Calendar extends Component {
     return this.state.dateObject.format("MMMM");
   };
   startingDate = () => {
-    return this.state.startDate.format("MM ddd DD YYYY")
+    return startDate.format("MM ddd DD YYYY")
   };
+  endingDate = () => {
+    return endDate.format("MM ddd DD YYYY")
+  };
+
+  wateringDay = () => {
+    let currentWateringDay = startDate;
+    console.log(currentWateringDay.format("ddd DD"));
+    let dayToWaterList = [];
+    while (currentWateringDay.isSameOrBefore(endDate)) {
+      currentWateringDay = currentWateringDay.add(3, "days");
+      dayToWaterList.push(currentWateringDay.format("ddd DD"));
+      console.log(currentWateringDay.format("ddd DD"));
+    }
+    console.log(dayToWaterList);
+    return dayToWaterList;
+  }
+  
   
 
   render() {
-    
     return (
       <div>
+        <ul>{this.wateringDay().map((day, index) => (
+          <li key={index}>{day}</li>
+        ))}
+        </ul>
         <p>{this.startingDate()}</p>
+        <p>{this.endingDate()}</p>
       </div>
     );
   }

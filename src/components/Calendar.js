@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 const startDate = moment().year(2019).month(11).date(16);
-const endDate = moment(startDate).add(12, "weeks");
+const endDate = moment(startDate).add(12, "weeks").subtract(1, "day");
 
 class Calendar extends Component {
   state = {
     dateObject: moment(),
-    allMonths: moment.months(),
-    dayWatering: this.wateringDay
+    allMonths: moment.months()
   };
 
   daysInMonth = () => {
@@ -37,29 +36,48 @@ class Calendar extends Component {
   };
 
   wateringDay = () => {
-    let currentWateringDay = startDate;
-    console.log(currentWateringDay.format("ddd DD"));
+    let currentWateringDay = new moment(startDate);
     let dayToWaterList = [];
-    while (currentWateringDay.isSameOrBefore(endDate)) {
+    dayToWaterList.push(currentWateringDay.format("ddd DD"));
+    while (currentWateringDay.isBefore(endDate)) {
       currentWateringDay = currentWateringDay.add(3, "days");
-      dayToWaterList.push(currentWateringDay.format("ddd DD"));
-      console.log(currentWateringDay.format("ddd DD"));
+      if (currentWateringDay.isoWeekday() === 6) {
+        currentWateringDay.subtract(1, "day");
+        dayToWaterList.push(currentWateringDay.format("ddd DD"));
+      } else if (currentWateringDay.isoWeekday() === 7) {
+        currentWateringDay.add(1, "day");
+        dayToWaterList.push(currentWateringDay.format("ddd DD"));
+      } else if (currentWateringDay.isAfter(endDate)) {
+        break;
+      } else {
+        dayToWaterList.push(currentWateringDay.format("ddd DD"));
+      }
     }
-    console.log(dayToWaterList);
     return dayToWaterList;
+  };
+
+  weekdaysDisplay = () => {
+    let displayDay = new moment(startDate);
+    let weekday = [];
+    weekday.push(displayDay.format("MMM ddd DD"));
+    while (displayDay.isBefore(endDate)) {
+      displayDay = displayDay.add(1, "day");
+      if (displayDay.isoWeekday() !== 6 && displayDay.isoWeekday() !== 7) {
+        weekday.push(displayDay.format("MMM ddd DD"));
+      }
+    }
+    return weekday;
   }
   
-  
-
   render() {
     return (
       <div>
-        <ul>{this.wateringDay().map((day, index) => (
-          <li key={index}>{day}</li>
-        ))}
+        <div>{this.weekdaysDisplay().map((weekday, dayIndex) => (
+          <h2 key={dayIndex}>{weekday}</h2>))}
+        </div>
+        <ul>{this.wateringDay().map((day, calendarIndex) => (
+          <li key={calendarIndex}>{day}</li>))}
         </ul>
-        <p>{this.startingDate()}</p>
-        <p>{this.endingDate()}</p>
       </div>
     );
   }

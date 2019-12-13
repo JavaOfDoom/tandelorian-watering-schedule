@@ -12,6 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Tandelorian Watering Schedule</h1>
         <WateringSchedule plants={this.state.plants} />
         <Calendar />
       </div>

@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+import Plants from './Plants'
+import plantData from './Apprentice_WeGrowInTandem_Data.json';
 const startDate = moment().year(2019).month(11).date(16);
 const endDate = moment(startDate).add(12, "weeks").subtract(1, "day");
 
 class Calendar extends Component {
   state = {
     dateObject: moment(),
-    allMonths: moment.months()
+    allMonths: moment.months(),
+    plants: plantData
   };
 
   daysInMonth = () => {
@@ -35,7 +38,7 @@ class Calendar extends Component {
     return endDate.format("MM ddd DD YYYY")
   };
 
-  wateringDay = () => {
+/*   wateringDay = () => {
     let currentWateringDay = new moment(startDate);
     let dayToWaterList = [];
     dayToWaterList.push(currentWateringDay.format("ddd DD"));
@@ -54,7 +57,7 @@ class Calendar extends Component {
       }
     }
     return dayToWaterList;
-  };
+  }; */
 
   weekdaysDisplay = () => {
     let displayDay = new moment(startDate);
@@ -73,11 +76,15 @@ class Calendar extends Component {
     return (
       <div>
         <div>{this.weekdaysDisplay().map((weekday, dayIndex) => (
-          <h2 key={dayIndex}>{weekday}</h2>))}
+          <div key={dayIndex}>
+            <h2>{weekday}</h2>
+            <Plants />
+          </div>))}
+          
         </div>
-        <ul>{this.wateringDay().map((day, calendarIndex) => (
+        {/* <ul>{this.wateringDay().map((day, calendarIndex) => (
           <li key={calendarIndex}>{day}</li>))}
-        </ul>
+        </ul> */}
       </div>
     );
   }

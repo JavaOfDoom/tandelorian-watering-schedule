@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 import { plantWateringData } from './Plants'
+import '../App.css';
 const startDate = moment().year(2019).month(11).date(16);
 const endDate = moment(startDate).add(12, "weeks").subtract(1, "day");
 let weekday = [];
@@ -39,22 +40,17 @@ weekday.forEach((day) => {
 weekday = weekdayReplacer
 
 class Calendar extends Component {
-  state = {
-    dateObject: moment()
-  };
 
   render() {
     return (
-      <div>
-        <div>{weekday.map((days, index) => (
-          <div key={index}>
-            <h3>{days.day}</h3>
-            <div>{days.plantNames.map((name, index) => (
-              <p key={name + index}>{name ? name : "No plants to water"}</p>
-            ))}</div>
-            
-          </div>))}
-        </div>
+      <div>{weekday.map((days, index) => (
+        <div key={index}>
+          <h3 className="weekdayName">{days.day}</h3>
+          <div className="plantFlex">{days.plantNames.map((name, index) => (
+            <p className="plantCards" key={name + index}>{name}</p>
+          ))}</div>
+          
+        </div>))}
       </div>
     );
   }

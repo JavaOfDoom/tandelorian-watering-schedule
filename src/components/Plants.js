@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import moment from 'moment';
 import plantData from './Apprentice_WeGrowInTandem_Data.json';
 const startDate = moment().year(2019).month(11).date(16);
@@ -34,16 +33,3 @@ plantData.forEach((plant, index) => {
   eachPlantData.waterSchedule = dayToWaterList;
   plantWateringData.push(eachPlantData);
 });
-
-class Plants extends Component {
-
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-}
-
-export default Plants

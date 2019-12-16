@@ -1,3 +1,40 @@
+## Install Instructions
+To see this project download or clone it to your local machine.
+Once you have done that, `cd` into the `tandelorian-watering-schedule` folder and run `npm install`
+All the dependencies should install. Once the install is finished run `npm start`.
+Go to [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Features I was not able to include
+1) I think it would be a great feature to allow whomever watered the plant to put their name down and make the plant off as watered so that as other Tandelorians came along the plants would now get overwatered. I don't have enough experience yet with creating a backend to contain and persist that information.
+
+2) I was able to highlight the current day, but idealy it would be great if it loaded directly to the current date so that the user would not have to scroll down to see the current date. Along with that, all past dates would be stored and you could access them, but only if the user wanted to.
+
+3) I also wanted to add error handling and unit testing, but in my limited time this last week i was not able to. I understand the benefit of both, but do not have the familiarity with them to easily implement them yet. This is something that I want to learn more about.
+
+4) Another feature that would be fun would to allow for adding a new plant and its picture to the list.
+
+5) I was also considering how to add holidays into the schedule to adjust watering days like I did with weekend days, but time did not permit it.
+
+## Known Issues
+The only issue that really stood out to me was the centering of the individual plant cards while adjusting the browswer. It looks very nice on a full browser window and on mobile, but while adjusting the plant cards stay to the left and there is a gap on the right. When attempting to center the cards if a row was uneven then they would be off-center of the centered cards.
+
+## Complexities and Challenges
+This was my first time building a react app from scratch. I haven been working with react a lot The Difference Engine, but it's been mostly front-end styling and working with all ready existing code. It was a bit of a challenge as I worked on building out the structure and implementing the algorithms. I got stuck the longest while trying to construct the array that had each plant and the days it was supposed to be watered. And then when trying to flip it and create another array of each weekday and pass the plants that would only get watered on that day.
+
+Another challenge I came across was connecting the specific images with specific plants. However after creating the first two big arrays of plant watering days the solution came to me much faster.
+
+It was such an exhilirating challenge! Despite all I've learned the last few years, I keep finding new and fun things to learn about code and how to implement them!
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -4,12 +4,11 @@ const startDate = moment().year(2019).month(11).date(16);
 const endDate = moment(startDate).add(12, "weeks").subtract(1, "day");
 export const plantWateringData = [];
 
-plantData.forEach((plant, index) => {
+plantData.forEach((plant) => {
   let eachPlantData = {};
   plant.water_after = plant.water_after.split(" ");
   plant.water_after = parseInt(plant.water_after[0]);
   eachPlantData.water_after = plant.water_after;
-  eachPlantData.plantIndex = (plant.name.split(" ").join("-") + "-" + index);
   eachPlantData.name = plant.name;
   
   let currentWateringDay = new moment(startDate);

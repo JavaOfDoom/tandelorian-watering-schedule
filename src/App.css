@@ -5,9 +5,8 @@
 }
 
 body {
-  font-family: Apercu-Mono,monospace;
+  font-family: Apercu-Mono, monospace;
   line-height: 1.4;
-  text-align: center;
 }
 
 a {
@@ -16,24 +15,41 @@ a {
 }
 
 .App {
-  margin: 0.5% 15%;
+  margin: 0.5% 12%;
+  text-align: center;
 }
 
 .weekdayName {
-  background-color: #D4F7E8;
+  background-color: #d4f7e8;
   padding: 10px;
+}
+
+.plantDayContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .plantFlex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  width: 90%;
 }
 
 .plantCards {
-  height: 100px;
+  display: flex;
+  height: 120px;
   width: 300px;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 12px;
+  justify-content: space-between;
+  align-items: center;
   border: solid 1px black;
+}
+
+.plantImage {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
 }

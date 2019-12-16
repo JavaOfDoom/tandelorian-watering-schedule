@@ -85,15 +85,20 @@ weekday.forEach((day) => {
   weekdayReplacer.push(newWeekday)
 })
 weekday = weekdayReplacer
-
+const now = moment().format("dddd MMMM DD YYYY");
 class Calendar extends Component {
 
   render() {
-    console.log(plantImages)
+
     return (
       <div>{weekday.map((days, dayIndex) => (
         <div key={dayIndex}>
-          <h3 className="weekdayName">{days.day}</h3>
+          <h3 className="weekdayName" 
+              style={(days.day === now) 
+                ? { border: "solid 5px #FF6753"} 
+                : { border: "solid 1px #869B8D"}}>
+            {days.day}
+          </h3>
           <div className="plantDayContainer">  
             <div className="plantFlex">{days.plantNames.map((name, plantIndex) => (
               <div className="plantCards" key={name + plantIndex}>

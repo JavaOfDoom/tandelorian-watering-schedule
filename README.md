@@ -1,4 +1,4 @@
-### Apprenticeship Code Challenge Criteria
+# Apprenticeship Code Challenge Criteria
 
 ## Prompt: We grow in Tandem
 At Tandem, we are serious about everyone's growth, including that of our plants. Whether you are

@@ -1,8 +1,50 @@
+### Apprenticeship Code Challenge Criteria
+
+## Prompt: We grow in Tandem
+At Tandem, we are serious about everyone's growth, including that of our plants. Whether you are
+walking around upstairs or downstairs at the office, you will find our green friends happily growing like
+the rest of us. There are quite a few Tandelorians who will walk around the office and water the plants
+to ensure they are healthy.
+
+However, we have quite a big plant family, and it is hard to manually keep track of when to water any
+particular plant. We don't want our plants to ever miss out on a watering!
+
+## Goal
+Your goal is to create an application that generates a watering schedule for the next 12 weeks for all of
+our plants.
+
+Use creative license in terms of how you want us to see this schedule. At minimum, the plant caretaker
+looking at the schedule should be able to easily identify which plants to water on a particular date. It
+could be a user interface (UI), command-line tool, written to file, etc.
+
+We would also like to see a README which includes any information about how to run the code, any
+known issues or complexity we should look out for, and any additional features you would like to have
+added to make your scheduler even more awesome.
+
+## Assumptions
+* We do not water our plants on a weekend. Work-life balance is important, and we shouldn't be in
+the office on a weekend.
+* Our plants are reasonably tolerant and will still be happy if they are watered a day before or after
+the day they should be watered.
+* Watering an individual plant takes no time at all so you don't have to worry about how many
+plants can be watered in a particular day.
+* The scheduling should start from next Monday and last for 12 weeks.
+* All plants will be watered on the first day of the schedule (next Monday).
+* We recognize that when to water a plant is heavily dependent on other factors such as soil,
+weather, humidity, etc. You can assume that we know exactly when to water these specific plants.
+* You have been provided a JSON file which contains data for our plants.
+
+## Acceptance Criteria
+* The user can view which plant(s) to water on which date(s).
+* The schedule covers the next 12 weeks starting next Monday.
+* No plants are watered on Saturdays or Sundays.
+* Each plant is watered on its desired schedule or as close as possible, taking into account weekends.
+
 ## Install Instructions
-To see this project download or clone it to your local machine.
-Once you have done that, `cd` into the `tandelorian-watering-schedule` folder and run `npm install`
-All the dependencies should install. Once the install is finished run `npm start`.
-Go to [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* To see this project download or clone it to your local machine.
+* Once you have done that, `cd` into the `tandelorian-watering-schedule` folder and run `npm install`
+* All the dependencies should install. Once the install is finished run `npm start`.
+* Go to [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Features I was not able to include
 1) I think it would be a great feature to allow whomever watered the plant to put their name down and make the plant off as watered so that as other Tandelorians came along the plants would now get overwatered. I don't have enough experience yet with creating a backend to contain and persist that information.
@@ -25,16 +67,16 @@ Another challenge I came across was connecting the specific images with specific
 
 It was such an exhilirating challenge! Despite all I've learned the last few years, I keep finding new and fun things to learn about code and how to implement them!
 
-
-
-
-
-
-
-
-
-
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
